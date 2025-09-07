@@ -24,8 +24,8 @@
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "${containerWorkspaceFolder}/.devcontainer/scripts/post_create_command.sh",
-	"onCreateCommand": "${containerWorkspaceFolder}/.devcontainer/scripts/on_create_command.sh",
+	"postCreateCommand": "chmod +x ${containerWorkspaceFolder}/.devcontainer/scripts/post_create_command.sh && bash ${containerWorkspaceFolder}/.devcontainer/scripts/post_create_command.sh",
+	"onCreateCommand": "chmod +x ${containerWorkspaceFolder}/.devcontainer/scripts/on_create_command.sh && bash ${containerWorkspaceFolder}/.devcontainer/scripts/on_create_command.sh",
 	// Configure tool-specific properties.
 	"customizations": {
 		"vscode": {
