@@ -1,0 +1,30 @@
+services:
+  devcontainer:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    command: sleep infinity
+    healthcheck:
+      test: ["CMD", "ls", "/home/nonroot/workspaces/backend-ia"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    volumes:
+      - ..:/home/nonroot/workspaces/backend-ia
+      - type: bind
+        source: ./.p10k.zsh
+        target: /home/nonroot/.p10k.zsh
+      - type: bind
+        source: ./.zshrc
+        target: /home/nonroot/.zshrc
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+# Exemplo de DATABASE_URL para Redis:
+# DATABASE_URL=redis://redis:6379/0
