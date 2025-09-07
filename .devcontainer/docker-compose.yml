@@ -5,12 +5,12 @@ services:
       dockerfile: .devcontainer/Dockerfile
     command: sleep infinity
     healthcheck:
-      test: ["CMD", "ls", "/home/nonroot/workspaces/backend"]
+      test: ["CMD", "ls", "/workspaces/grifa"]
       interval: 30s
       timeout: 10s
       retries: 5
     volumes:
-      - ..:/home/nonroot/workspaces/backend
+      - ..:/workspaces/grifa
       - type: bind
         source: ./.p10k.zsh
         target: /home/nonroot/.p10k.zsh
