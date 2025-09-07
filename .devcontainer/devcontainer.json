@@ -6,12 +6,12 @@
 	// "image": "mcr.microsoft.com/devcontainers/base:bullseye",
 	"dockerComposeFile": "docker-compose.yml",
 	"service": "devcontainer",
-	"workspaceFolder": "/workspaces/grifa",
+	"workspaceFolder": "/home/nonroot/workspaces/backend",
 	"features": {
 		"ghcr.io/devcontainers/features/docker-in-docker:2": {
 			"version": "latest",
 			"enableNonRootDocker": "true",
-			"moby": "true"
+			"moby": "false"
 		},
 		"ghcr.io/devcontainers/features/common-utils:2": {},
 		"ghcr.io/stuartleeks/dev-container-features/shell-history:0": {},
