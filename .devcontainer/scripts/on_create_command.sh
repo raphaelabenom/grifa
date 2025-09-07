@@ -1,3 +1,5 @@
+#!/bin/bash
+
 FONT_NAME="JetBrainsMono"
 
 echo "Instalando fontes..."
